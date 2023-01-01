@@ -23,7 +23,7 @@ const TaxCalculator = () => {
   };
 
   const calculateTax = async () => {
-    let res = await axios.post("http://localhost:8080/calculateTax", {
+    let res = await axios.post("https://tekmentors-problem1.onrender.com/calculateTax", {
       fileData: fileData,
     });
     if (res.data.message === "file saved") {
@@ -34,7 +34,7 @@ const TaxCalculator = () => {
 
   useEffect(() => {
     const getInvoiceData = async () => {
-      let res = await axios.get("http://localhost:8080/invoice");
+      let res = await axios.get("https://tekmentors-problem1.onrender.com/invoice");
       setFileData(res.data);
       csvFileToArray(res.data);
     };
